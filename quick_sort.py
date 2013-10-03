@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import random
-import pdb
+import time
 
 def unsorted(length):
     return [random.randrange(0, length*10) for r in xrange(length)]
@@ -46,5 +46,8 @@ if __name__ == '__main__':
     print l
     start = 0
     end = len(l) - 1
+    start_time = time.time()
     quick_sort(l, start, end)
+    end_time = time.time()
     print l
+    print end_time-start_time
