@@ -19,8 +19,19 @@ def sort(L):
         sortedL[si+2:] = temp
     return sortedL
 
+# from wiki
+def insertion_sort(L):
+    if len(L) == 1:
+        return L
+    b = insertion_sort(L[1:])
+    m = len(b)
+    for i in range(m):
+        if L[0] <= b[i]:
+            return b[:i]+[L[0]]+b[i:]
+    return b + [L[0]]
+
 if __name__ == '__main__':
     l = unsorted(10)
     print l
-    sortedL = sort(l)
-    print sortedL
+    print sort(l)
+    print insertion_sort(l)
